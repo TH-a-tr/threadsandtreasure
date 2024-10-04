@@ -1,0 +1,266 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+
+:root {
+  --primaryColor: #f09d51;
+  --mainWhite: #fff;
+  --mainBlack: #222;
+  --mainGrey: #ececec;
+  --mainSpacing: 0.1rem;
+  --mainTransition: all 0.3s linear;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #8d8d8d;
+  border-radius: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #8d8d8d #f1f1f1;
+}
+body {
+  height: 200vh;
+  background-color: #fafafa;
+  color: var(--mainBlack);
+  background: var(--mainWhite);
+  font-family: "Lato", Arial, sans-serif;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: rgb(231, 226, 221);
+
+  z-index: 1;
+}
+
+.navbar-center {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0 1.5rem;
+}
+
+.nav-icon {
+  font-size: 1.5rem;
+}
+
+.site-title {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+}
+
+.hero {
+  min-height: calc(100vh - 60px);
+  background: url("../images/background.jpeg") center/cover no-repeat, var(--mainWhite);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+  display: inline-block;
+  padding: 2rem;
+}
+
+.banner-title {
+  font-size: 3.4rem;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  margin-bottom: 3rem;
+}
+
+.banner-btn {
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  font-size: 1rem;
+  background: var(--primaryColor);
+  color: var(--mainBlack);
+  border: 1px solid var(--primaryColor);
+  transition: var(--mainTransition);
+  cursor: pointer;
+}
+
+.banner-btn:hover {
+  background: transparent;
+  color: var(--primaryColor);
+}
+
+items-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+  background-color: #f9f9f9;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--mainBlack);
+  letter-spacing: var(--mainSpacing);
+  text-transform: uppercase;
+}
+
+.products {
+  padding: 2rem 0;
+}
+
+.category {
+  margin-bottom: 3rem;
+}
+
+.category-title {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.products-center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product {
+  width: calc(33.33% - 2rem);
+  margin-bottom: 2rem; 
+  margin-left: 1rem;
+  margin-right: 1rem; 
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+}
+
+.product:nth-child(3n) {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.product-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.product h3 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.product h4 {
+  font-size: 1.25rem;
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 80%;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.modal-content p {
+  margin-bottom: 0.5rem;
+}
+
+.modal-content img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000; 
+  display: none; 
+}
+
+.modal.show {
+  display: block;
+}
+
+.modal-overlay.show {
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .product {
+    width: calc(50% - 2rem);
+  }
+  .product:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .product {
+    width: calc(100% - 2rem);
+    margin-right: 0;
+  }
+  .section-title h2 {
+    font-size: 2rem;
+  }
+}
